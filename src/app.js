@@ -1,12 +1,18 @@
 import express from 'express';
-import userRoute from './routes/user.route.js'
+import dotenv from 'dotenv';
 import conn from'./database/db.js'
+import userRoute from './routes/user.route.js'
+import authRoute from './routes/auth.route.js'
+
+dotenv.config();
+conn();
+
 
 const app = express();
 
-conn();
 
 app.use(express.json());
 app.use('/user', userRoute);
+app.use('/auth', authRoute);
 
 export default app;
