@@ -1,11 +1,12 @@
-const express = require('express');
-const  userRoute = require('./routes/user.route.js')
-const app = express();
-const connectDataBase = require('./database/db.js')
+import express from 'express';
+import userRoute from './routes/user.route.js'
+import conn from'./database/db.js'
 
-connectDataBase();
+const app = express();
+
+conn();
 
 app.use(express.json());
-app.use('/', userRoute);
+app.use('/user', userRoute);
 
-module.exports = app;
+export default app;

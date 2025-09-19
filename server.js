@@ -1,5 +1,5 @@
-const express = require('express');
-const app =  require('./src/app.js')
+import express from 'express';
+import app  from './src/app.js';
 const PORT = 3000;
 
 
